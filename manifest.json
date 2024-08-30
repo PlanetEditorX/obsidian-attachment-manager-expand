@@ -5,5 +5,5 @@
     "minAppVersion": "0.12.17",
     "description": "Attachment folder name binding note name, automatically rename, automatically delete, show/hide.\n附件文件夹名称绑定笔记名、自动重命名、自动删除、显示/隐藏。\n在原插件的基础上新增显示其它需要的拓展文件功能，方便一站式管理",
     "author": "PlanetEditorX",
-    "isDesktopOnly": true
+    "isDesktopOnly": false
 }
