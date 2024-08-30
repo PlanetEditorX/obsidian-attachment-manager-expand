@@ -9,6 +9,7 @@ export interface Settings {
     autoRenameFolder: boolean;
     autoRenameFiles: boolean;
     autoDeleteFolder: boolean;
+    extendName: string;
 }
 
 const _notename = "${notename}";
@@ -24,6 +25,7 @@ export const DEFAULT_SETTINGS: Settings = {
     autoRenameFolder: true,
     autoRenameFiles: true,
     autoDeleteFolder: false,
+    extendName: ""
 }
 
 export const containsFilenameOrNotename = (settings: Settings) => {
@@ -45,6 +47,13 @@ export const buildFolderRegExp = (settings: Settings) => {
     // https://github.com/chenfeicqq/obsidian-attachment-manager/issues/11
     reg = reg.replace(encode(_filename), ".+").replace(encode(_notename), ".+");
     return new RegExp("^" + reg + "$");
+}
+
+// 拓展文件
+export const buildFileRegExp = (settings: Settings) => {
+    if (settings.extendName.length) {
+        return new RegExp('\\.(' + settings.extendName + ')$', 'i');
+    }
 }
 
 export const buildFolderName = (settings: Settings, fileName: string, notename: string) => {

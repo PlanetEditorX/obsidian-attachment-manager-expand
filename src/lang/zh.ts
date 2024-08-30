@@ -2,6 +2,8 @@ export default {
     "plugin_name": "附件管理器",
     "settings_folder_name": "附件文件夹",
     "settings_folder_name_desc": "附件文件夹的名称，使用变量 ${filename} 获取笔记（md/canvas）文件名称（包含后缀），例：${filename}_Attachments。",
+    "settings_expand_name": "显示其它类型文件",
+    "settings_expand_name_desc": "除了默认显示的文件类型外，还想要显示的文件类型，重启生效。文件类型以“|”隔开，如：txt|png",
     "settings_pasted_image_file_name": "“粘贴图片”文件名",
     "settings_pasted_image_file_name_desc": "“粘贴图片”保存为文件的名称，使用变量 ${notename} 获取笔记（md/canvas）名称，使用变量 ${datetime} 获取时间，例：${notename}-${datetime}。",
     "settings_datetime_format": "${datetime} 格式",

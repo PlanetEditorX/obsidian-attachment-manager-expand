@@ -29,6 +29,18 @@ export class SettingTab extends PluginSettingTab {
                 }));
 
         new Setting(containerEl)
+            .setName(lang.get('settings_expand_name'))
+            .setDesc(lang.get('settings_expand_name_desc'))
+            .addText(text => text
+                .setPlaceholder(DEFAULT_SETTINGS.extendName)
+                .setValue(this.plugin.settings.extendName)
+                .onChange(async (value: string) => {
+                    value = normalizePath(value);
+                    this.plugin.settings.extendName = value;
+                    await this.plugin.saveSettings();
+                }));
+
+        new Setting(containerEl)
             .setName(lang.get('settings_pasted_image_file_name'))
             .setDesc(lang.get('settings_pasted_image_file_name_desc'))
             .addText(text => text

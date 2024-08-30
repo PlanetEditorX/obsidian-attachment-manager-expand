@@ -1,0 +1,11 @@
+{
+  "folderName": "assets",
+  "pastedImageName": "${notename}-${datetime}",
+  "datetimeFormat": "YYYYMMDDHHmmssSSS",
+  "hideFolder": false,
+  "aeroFolder": true,
+  "autoRenameFolder": true,
+  "autoRenameFiles": true,
+  "autoDeleteFolder": true,
+  "extendName": ""
+}

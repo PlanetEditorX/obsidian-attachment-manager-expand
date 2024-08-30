@@ -2,6 +2,8 @@ export default {
     "plugin_name": "Attachment Manager",
     "settings_folder_name": "Attachment Folder",
     "settings_folder_name_desc": "The name of the attachment folder, using the variable ${filename} to get name of the note(\"md/canvas\") file. e.g., ${filename}_Attachments .",
+    "settings_expand_name": "Show other types of files",
+    "settings_expand_name_desc": "In addition to the file types displayed by default, the file types you want to display will take effect after restarting. File types are separated by \"|\", such as：txt|png",
     "settings_pasted_image_file_name": "Pasted Image Name",
     "settings_pasted_image_file_name_desc": "\"Pasted Image\" file name, using the variable ${notename} to get name of the note(\"md/canvas\"), using the variable ${datetime} to get datetime. e.g., ${notename}-${datetime}) .",
     "settings_datetime_format": "${datetime} Format",

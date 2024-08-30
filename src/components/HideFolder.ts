@@ -2,7 +2,7 @@ import { setIcon } from "obsidian";
 
 import { Plugin } from '../Plugin'
 import { lang } from '../lang'
-import { buildFolderRegExp } from '../Settings'
+import { buildFolderRegExp, buildFileRegExp } from '../Settings'
 
 export class HideFolder {
     plugin: Plugin
@@ -77,6 +77,20 @@ export class HideFolder {
                 }
             }
         })
+
+        // 指定拓展文件
+        if (this.plugin.settings.extendName.length) {
+            const files = document.querySelectorAll(".nav-file");
+            const fileFilter = buildFileRegExp(this.plugin.settings) || new RegExp(/\.md$/);
+            files.forEach((file) => {
+                const item = file?.children[0] as HTMLElement
+                const _path = item.dataset.path || ''
+                if (fileFilter.test(_path)) {
+                    // 移除Obsidian自带隐藏
+                    file.children[0]?.removeClass('is-unsupported')
+                }
+            })
+        }
     }
 
     unload() {
